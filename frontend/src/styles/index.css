@@ -1,0 +1,503 @@
+/* global font & theme */
+:root {
+  font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* pages */
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --border: rgba(17, 24, 39, 0.10);
+
+  /* text */
+  --text: #111827;
+  --muted: #6b7280;
+
+  /* brand*/
+  --purple: #6d28d9;
+  --purple-soft: rgba(109, 40, 217, 0.12);
+  --red: #ec3838;
+
+  --success: rgba(34, 197, 94, 0.18);
+  /* green */
+  --error: rgba(239, 68, 68, 0.18);
+  /* red */
+  --warning: rgba(245, 158, 11, 0.18);
+  /* yellow */
+}
+
+/* reset */
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+/* app layout + sidebar */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 16px;
+  transition: width 200ms ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebarTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.brandText {
+  font-weight: 800;
+}
+
+.collapseButton {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* navs */
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background: rgba(109, 40, 217, 0.08);
+}
+
+/* hide when collapsed */
+.sidebar.collapsed .label,
+.sidebar.collapsed .brandText {
+  display: none;
+}
+
+.sidebar.collapsed .navItem {
+  justify-content: center;
+}
+
+.statusStyle {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.statusStyle:hover {
+
+  background-color: #e5e5e5;
+  border-radius: 4px;
+}
+
+.dashboardStyle {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.th {
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 20%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 20%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 20%;
+}
+
+th,
+td {
+  padding: 12px 20px;
+  text-align: left;
+}
+
+.editModalStyle {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.editModal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.editModal label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.editModal input,
+.editModal select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.editModalActionsStyle {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.editModalActionsStyle button {
+  flex: 1;
+}
+
+.saveButtonStyle {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--purple);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transforms 120ms ease, box-shadow 120ms ease;
+}
+
+.saveButtonStyle:hover {
+  transform: translate(-1px);
+  box-shadow: 0 6px 14px rgba(109, 40, 217, 0.25);
+}
+
+.saveButtonStyle:active {
+  transform: translate(0);
+}
+
+.cancelButtonStyle {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #111827;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transforms 120ms ease, box-shadow 120ms ease;
+}
+
+.cancelButtonStyle:hover {
+  transform: translate(-1px);
+  box-shadow: 0 6px 14px rgba(109, 40, 217, 0.25);
+}
+
+.cancelButtonStyle:active {
+  transform: translate(0);
+}
+
+/* Data Analytics Start */
+.analytics-chart-container {
+  grid-column: 1 / -1;
+  height: 400px;
+}
+
+.chart-wrapper {
+  height: 300px;
+  width: 100%;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 42px;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+/* Color utilities for stats */
+.text-purple {
+  color: var(--purple);
+}
+
+.text-yellow {
+  color: #f59e0b;
+}
+
+.text-red {
+  color: #ef4444;
+}
+
+.text-main {
+  color: var(--text);
+}
+
+.text-green {
+  color: #22c55e;
+}
+
+/* Data Analytics End */
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.applicationRow {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.jobApplicationsRow {
+  flex: 0 0 250px;
+  background: linear-gradient(135deg, #ffffff, #f8f7ff);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ece9ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  width: 250px;
+}
+
+.totalRejections {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--purple);
+  margin: 0;
+}
+
+.totalAmount {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--purple);
+  margin: 0;
+}
+
+.totalInterviews {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--purple);
+  margin: 0;
+}
+
+/* Profile Page */
+
+.profilePage {
+  padding: 20px;
+}
+
+.profileSection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.profileSection h2 {
+  margin-top: 0;
+}
+
+.profileSection p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.profileSection p,
+.profileSection p span {
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* Shared button/link style */
+
+.profileSection a,
+.profileSectionLink,
+.profileLinkButton {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--purple-soft);
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.profileSection a:hover,
+.profileSectionLink:hover,
+.profileLinkButton:hover {
+  opacity: 0.9;
+}
+
+.profileSection input,
+.profileSection textarea {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.actionButtonBase {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  /* for Link */
+  transition: 0.15s ease;
+}
+
+.actionButtonPrimary {
+  background: var(--purple);
+  color: white;
+}
+
+.actionButtonPrimary:hover {
+  background: #5b21b6;
+  /* slightly darker purple */
+}
+
+.actionButtonDelete {
+  background: white;
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.actionButtonDelete:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.actionsCell {
+  display: flex;
+  gap: 4px;
+}
+
+table {
+  table-layout: auto;
+}
+
+th:last-child,
+td:last-child {
+  width: 1%;
+  /* shrink column */
+  white-space: nowrap;
+}
+
+/* Sort Dropdown */
+
+.dashboardToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.sortSelect {
+  width: 180px;
+}
+
+@media (max-width: 700px) {
+  .dashboardToolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sortSelect {
+    width: 100%;
+  }
+}

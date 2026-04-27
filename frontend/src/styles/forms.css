@@ -1,0 +1,184 @@
+/* page wrapper */
+.appPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* card */
+.appCard {
+    width: 100%;
+    max-width: 520px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
+}
+
+/* title */
+.appTitle {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* form */
+.appForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* shared inputs */
+.field {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 15px;
+    transition: all 150ms ease;
+}
+
+.field:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px var(--purple-soft);
+}
+
+.formLabel {
+    display: block;
+    /* Make labels take their own line */
+    margin-bottom: 0.00001em;
+    /* Space between label and input */
+    font-weight: 800;
+}
+
+/* add job button */
+.confirmButton {
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: var(--purple);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.confirmButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(109, 40, 217, 0.25);
+}
+
+.confirmButton:active {
+    transform: translateY(0);
+}
+
+/* button container */
+.buttonRow {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* make buttons share space */
+.buttonRow button {
+    flex: 1;
+}
+
+/* cancel job button */
+.cancelButton {
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.cancelButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(127, 126, 127, 0.25);
+}
+
+.cancelButton:active {
+    transform: translateY(0);
+}
+
+/* delete all data button styles */
+.dangerButton {
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: var(--red);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.dangerButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(239, 68, 68, 0.25);
+}
+
+.dangerButton:active {
+    transform: translateY(0);
+}
+
+/* dark background */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* popup card */
+.modalCard {
+    width: 100%;
+    max-width: 520px;
+    background: var(--surface);
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.companyFilterContainer{
+    display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+.companyFilterLabel{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #444;
+    background-color: white ;
+}
+
+.companyFilterSelect{
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font weight: 600;
+    background-color: var(--purple);
+    color: white;
+    width: fit-content;
+
+}
