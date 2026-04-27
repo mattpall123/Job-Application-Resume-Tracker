@@ -25,26 +25,6 @@ A full-stack web application for tracking job applications, built with React and
 - H2 Database (in-memory)
 - Maven
 
-## Project Structure
-
-```
-job-application-tracker/
-├── frontend/                 # React frontend
-│   ├── src/
-│   │   ├── components/       # Reusable components
-│   │   ├── styles/          # CSS files
-│   │   └── main.jsx         # Entry point
-│   └── package.json
-├── backend/                  # Spring Boot backend
-│   ├── src/main/java/
-│   │   ├── controller/      # REST controllers
-│   │   ├── model/           # Entity models
-│   │   ├── repository/      # JPA repositories
-│   │   └── service/         # Business logic
-│   └── pom.xml
-└── doc/                     # Sprint documentation
-```
-
 ## Installation & Setup
 
 ### Prerequisites
