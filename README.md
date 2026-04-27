@@ -122,4 +122,3 @@ Files are stored using MD5 content hashing to prevent duplicates:
 ## License
 
 This project is developed for educational purposes as part of EECS3311.
-```
